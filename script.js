@@ -12,6 +12,8 @@ map.on('click', function(e){
     console.log("latitude: " + e.latlng.lat + ", Longitude:" + e.latlng.lng);
 });
 
+
+
 // deuxième carte
 
 // var map2 = L.map('map2').setView([-21.34620549179757, 55.4930457293825], 20);

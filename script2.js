@@ -1,4 +1,4 @@
-// import Samsung, { APPS, KEYS } from 'samsung-tv-control'
+
 const { Samsung, KEYS, APPS } = require('samsung-tv-control')
 
 const config = {

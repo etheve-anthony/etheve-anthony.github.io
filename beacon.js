@@ -58,11 +58,27 @@ function calculatePosition(r1, r2, r3) {
 // Enfin, la fonction résout un système d'équations pour déterminer les coordonnées x et y de l'intersection des trois cercles, ce qui correspond à la position du smartphone. Ces coordonnées sont retournées sous la forme d'un objet avec les propriétés x et y.
 
 // Afficher la position du smartphone dans la console (Mettre à jour la position toutes les 5 secondes)
+// function updatePosition(r1, r2, r3) {
+//     setInterval(() => {
+//         const position = calculatePosition(r1, r2, r3);
+//         output.innerHTML = `Position: (${position.x}, ${position.y})`;
+//       }, 5000);
+// }
+
+// Ajouter un fond de carte OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Créer un marqueur pour représenter la position du smartphone
+const marker = L.marker([position.x, position.y]).addTo(map);
+
+// Mettre à jour la position du marqueur toutes les 5 secondes
 function updatePosition(r1, r2, r3) {
-    setInterval(() => {
-        const position = calculatePosition(r1, r2, r3);
-        output.innerHTML = `Position: (${position.x}, ${position.y})`;
-      }, 5000);
+setInterval(() => {
+  const position = calculatePosition(r1, r2, r3);
+  marker.setLatLng([position.x, position.y]);
+}, 5000);
 }
 
 // Utiliser les données reçues pour calculer la position du smartphone

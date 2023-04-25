@@ -4,7 +4,8 @@ const { Samsung, KEYS, APPS } = require('samsung-tv-control')
 const config = {
   debug: true, // Default: false
   ip: '192.168.1.6',
-  mac: '9c:8c:6e:ab:b9:e6',
+  // mac: '9c:8c:6e:4f:09:98',
+  mac: '28:39:5E:80:2D:E0',
   nameApp: 'NodeJS-Test', // Default: NodeJS
   port: 8001, // Default: 8002
   token: '',
